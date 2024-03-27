@@ -31,12 +31,12 @@ class FranceTravailAPI:
     def __init__(
         self,
         testing,
-        code_type_territoire,
-        code_territoire,
-        code_type_activite,
-        code_activite,
-        code_type_periode,
-        code_type_nomenclature,
+        code_type_territoire: str = "DEP",
+        code_territoire: str = "13",
+        code_type_activite: str = "ROME",
+        code_activite: str = "M1805",
+        code_type_periode: str = "TRIMESTRE",
+        code_type_nomenclature: str = "CATCAND",
     ) -> None:
         """
         parameters:

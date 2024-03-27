@@ -20,18 +20,17 @@ class DataGetter(FranceTravailAPI):
                                                                       sansCaracteristiques: bool,
                                                                       listeCaracteristiques: array[object]
 
-            Specific kwargs are detailed in the docstrings of each method.
     """
 
     def __init__(
         self,
+        code_type_territoire,
+        code_territoire,
+        code_type_activite,
+        code_activite,
+        code_type_periode,
+        code_type_nomenclature,
         testing: bool = False,
-        code_type_territoire: str = "DEP",
-        code_territoire: str = "13",
-        code_type_activite: str = "ROME",
-        code_activite: str = "M1805",
-        code_type_periode: str = "TRIMESTRE",
-        code_type_nomenclature: str = "CATCAND",
     ) -> None:
 
         super().__init__(
@@ -95,4 +94,6 @@ class DataGetter(FranceTravailAPI):
             **kwargs,
         }
 
-        self.fetch_endpoint("stats-offres-demandes-emploi/v1/indicateur/stat-offres", body)
+        self.fetch_endpoint(
+            "stats-offres-demandes-emploi/v1/indicateur/stat-offres", body
+        )
